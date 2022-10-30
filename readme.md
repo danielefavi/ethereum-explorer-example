@@ -9,7 +9,7 @@ This project uses the Truffle framework. You can use any other framework (like H
 
 You can find all the uses cases for the class `EthereumExplorer` in the file `app/src/index.js`.
 
-<img src="https://github.com/danielefavi/ethereum-explorer-example/main/.github/images/dapp-screenshot.png" width="100%" />
+<img src="https://github.com/danielefavi/ethereum-explorer-example/raw/master/.github/images/dapp-screenshot.png" width="100%" />
 
 # Quick Start
 
