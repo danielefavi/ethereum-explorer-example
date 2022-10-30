@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="p-4">
+
+<div class="card mb-4">
+    <div class="card-header">Console</div>
+    <div class="card-body" style="height: 400px; overflow-y: auto;"><pre id="console"></pre></div>
+</div>
+
+<table class="table table-bordered d-none functions-table">
+    <thead>
+        <tr>
+            <th>Smart Contract Function</th>
+            <th>Parameters</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="callMessage-btn">message</button></td>
+            <td></td>
+            <td><p>It calls the smart contract to get the value of the public variable <code>message</code>.</p></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="callSpecialMessage-btn">specialMessage</button></td>
+            <td></td>
+            <td><p>It calls the smart contract to get the value of the public variable <code>specialMessage</code>.</p></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="callGetMessage-btn">getMessage()</button></td>
+            <td></td>
+            <td><p>It calls the function <code>getMessage()</code> from the smart contract.</p></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="updateMessage-btn">updateMessage(...)</button></td>
+            <td>
+                <input type="text" class="form-control" id="updateMessage-message" placeholder="message">
+            </td>
+            <td><p>It calls the function <code>updateMessage(message)</code> from the smart contract. <br>Your wallet manager (like MetaMask) will prompt you for confirming the transaction.</p></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="updateMessageSelfSigned-btn">updateMessage(...) - Self Signed</button></td>
+            <td>
+                <input type="text" class="form-control" id="updateMessageSelfSigned-message" placeholder="message">
+                <input type="text" class="form-control" id="updateMessageSelfSigned-address" placeholder="wallet address">
+                <input type="text" class="form-control" id="updateMessageSelfSigned-pkey" placeholder="private key">
+            </td>
+            <td>
+                <p>
+                    It calls the smart contract function <code>updateMessage(message)</code> and you have to provide the <b>wallet address</b> and the relate <b>private key</b> for signing the transaction.<br>
+                    You have to provide a <b>wallet address</b> and the related <b>private key</b> for signing and sending the transaction.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="updateSpecialMessage-btn">updateSpecialMessage(...)</button></td>
+            <td>
+                <input type="text" class="form-control" id="updateSpecialMessage-message" placeholder="message">
+                <input type="number" class="form-control" id="updateSpecialMessage-value" placeholder="value (should be 100)">
+            </td>
+            <td>
+                <p>
+                    It calls the smart contract function <code>updateSpecialMessage(message)</code>.<br>
+                    Your wallet manager (like MetaMask) will prompt you for confirming the transaction.<br>
+                    <b>NOTE:</b> the transaction value should be 100 as per the smart contract!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="updateSpecialMessageSelfSigned-btn">updateSpecialMessage(...) - Self Signed</button></td>
+            <td>
+                <input type="text" class="form-control" id="updateSpecialMessageSelfSigned-message" placeholder="message">
+                <input type="text" class="form-control" id="updateSpecialMessageSelfSigned-value" placeholder="value (should be 100)">
+                <input type="text" class="form-control" id="updateSpecialMessageSelfSigned-address" placeholder="wallet address">
+                <input type="text" class="form-control" id="updateSpecialMessageSelfSigned-pkey" placeholder="private key">
+            </td>
+            <td>
+                <p>
+                    It calls the smart contract function <code>updateSpecialMessage(message)</code> and you have to provide the <b>wallet address</b> and the relate <b>private key</b> for signing the transaction.<br>
+                    You have to provide a <b>wallet address</b> and the related <b>private key</b> for signing and sending the transaction.<br>
+                    <b>NOTE:</b> the transaction value should be 100 as per the smart contract!
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered d-none functions-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Parameters</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="fnc-load-events">Load Events</button></td>
+            <td><input type="number" class="form-control" placeholder="block number" id="from-block-number"></td>
+            <td>It loads the events from the given block.</td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" type="button" id="fnc-get-block-info">Block Info</button></td>
+            <td><input type="text" class="form-control" placeholder="block number (0, 1, 2, ... latest)" id="fnc-get-block-info-from-block"></td>
+            <td>Get the information of the given block.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
